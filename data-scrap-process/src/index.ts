@@ -3,14 +3,22 @@ import {Normalization} from "./normalization";
 import {Scrapper} from "./scrapper";
 import * as functions from "firebase-functions";
 
-export const scrapper = functions.https.onRequest(
-    (request, response) => new Scrapper({request, response}).run()
+const functionConfigs: functions.RuntimeOptions = {
+  timeoutSeconds: 300,
+  memory: "1GB",
+};
+
+export const scrapper = functions.runWith(functionConfigs).https.onRequest(
+    async (request, response) =>
+      await new Scrapper({request, response}).run()
 );
 
-export const normalization = functions.https.onRequest(
-    (request, response) => new Normalization({request, response}).run()
+export const normalization = functions.runWith(functionConfigs).https.onRequest(
+    async (request, response) =>
+      await new Normalization({request, response}).run()
 );
 
-export const migration = functions.https.onRequest(
-    (request, response) => new Migration({request, response}).run()
+export const migration = functions.runWith(functionConfigs).https.onRequest(
+    async (request, response) =>
+      await new Migration({request, response}).run()
 );
