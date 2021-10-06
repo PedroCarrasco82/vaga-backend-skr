@@ -1,5 +1,5 @@
 # Projeto para processo seletivo - SKR 
-Esse projeto tem como objetivo a criação de um fluxo de processamento de dados na qual inicialmente deverá obter os empreendimentos da <a href="https://skr.com.br/empreendimentos"><b>construtora SKR</b></a>.
+Esse projeto tem como objetivo a criação de um fluxo de processamento de dados no qual, inicialmente, deverá se obter os empreendimentos da <a href="https://skr.com.br/empreendimentos"><b>construtora SKR</b></a>.
 
 
 <hr />
