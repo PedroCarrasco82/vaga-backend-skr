@@ -4,7 +4,7 @@ import * as functions from "firebase-functions";
 
 const functionConfigs: functions.RuntimeOptions = {
   timeoutSeconds: 300,
-  memory: "1GB",
+  memory: "2GB",
 };
 
 export const scrapper = functions.runWith(functionConfigs).https.onRequest(

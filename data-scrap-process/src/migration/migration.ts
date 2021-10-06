@@ -23,7 +23,7 @@ export class Migration implements IFunction {
 
     const buildsCollection = this.database.collection("builds");
     await this.storeData(body, buildsCollection);
-    response.send("Finish :)");
+    response.status(201).send({message: "done"});
   }
 
   private async storeData(scrapData: any[], buildsCollection: FirebaseFirestore.CollectionReference) {

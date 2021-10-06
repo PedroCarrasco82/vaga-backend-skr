@@ -1,0 +1,27 @@
+{
+  "name": "process-handler",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Pedro Augusto Carrasco de Moura",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon ./src/server.ts"
+  },
+  "dependencies": {
+    "@types/node": "^16.10.3",
+    "axios": "^0.22.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "eslint": "^7.32.0",
+    "nodemon": "^2.0.13",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+  }
+}

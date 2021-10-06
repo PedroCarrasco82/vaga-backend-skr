@@ -1,13 +1,9 @@
 import IHttpHandler from "./../interfaces/httpHandler";
 import IFunction from "./../interfaces/function";
 import * as functions from "firebase-functions";
-// import {URL} from "url";
-// import {mkdirSync, existsSync} from "fs";
 import puppeteer from "puppeteer";
 import searchPageTag from "./tags/searchPageTag.json";
 import mainPageTag from "./tags/mainPageTag.json";
-// import ITag from "./interfaces/tag";
-
 
 export class Scrapper implements IFunction {
   constructor(private httpHandler: IHttpHandler) {}
@@ -106,6 +102,7 @@ export class Scrapper implements IFunction {
         };
       } else {
         const mainData = getDataFromTag(document, sel["children"]);
+        mainData["baseUrl"] = document.URL;
         return mainData;
       }
     }, tags);
