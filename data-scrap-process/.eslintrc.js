@@ -32,5 +32,6 @@ module.exports = {
     "no-extra-semi": 0,
     "semi": 0,
     "max-len": 0,
+    "linebreak-style": 0,
   },
 };
