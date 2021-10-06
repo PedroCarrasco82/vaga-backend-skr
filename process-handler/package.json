@@ -5,6 +5,7 @@
   "author": "Pedro Augusto Carrasco de Moura",
   "license": "MIT",
   "scripts": {
+    "build": "tsc",
     "dev": "nodemon ./src/server.ts"
   },
   "dependencies": {

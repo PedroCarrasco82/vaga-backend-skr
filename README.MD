@@ -18,7 +18,7 @@ Caso queira observar o quadro de desenvolvimento do projeto, <a href="https://tr
 
 ## 📈 Modelo do fluxo de processamento dos dados
 <p align="center">
-    <img src="./assets/img/Fluxo - SKR Processo Seletivo.jpg" width = 600>
+    <img src="https://raw.githubusercontent.com/pedrocarrasco82/vaga-backend-skr/main/assets/img/Fluxo%20-%20SKR%20Processo%20Seletivo.jpg" width = 600>
 </p>
 
 ### Serviços
@@ -28,3 +28,42 @@ Caso queira observar o quadro de desenvolvimento do projeto, <a href="https://tr
 | Handler | É responsável por ser a ponte entre o scrapper e o migration| 
 | Migration | Após a obtenção dos dados no Scrapper, o handler envia eles para o migration, e em seguida esses dados são validados e salvos no banco de dados|
  | API | A API atua na transmissão dos dados que já foram coletados pelo data Scrap Process|
+
+## Processo de Instalação
+
+1. É necessário realizar o download da CLI do Firebase, para saber mais sobre a instalação, <a href="https://firebase.google.com/docs/cli">clique aqui</a>.
+
+2. Deverá realizar o download das dependências de cada serviço e em conjunto iniciar alguns deles(process-handler e a API)
+```console
+$ cd process-handler
+$ yarn && yarn dev
+$ cd ..
+$ cd data-scrap-process
+$ yarn
+$ cd ..
+$ cd api
+$ yarn && yarn dev
+```
+
+3. Deve ser feita o deploy das cloud functions, para isso, deverá executar o comando abaixo dentro da pasta do projeto.
+```console
+$ cd ..
+$ firebase deploy
+```
+
+4. Agora o ambiente está pronto, para iniciar o processo de data scraping, o primeiro endpoint que deve ser inicializado é o http://localhost:3001/startdatascraprocess. Esse primeiro processo pode demorar alguns minutos para a obtenção de todos os dados.
+
+5. Com os dados salvos no banco, agora há disponibilidade de usufruir da API, se quiser testar alguma rota, teste com a seguinte URL: http://localhost:4001/builds/
+
+# 😄 Fale comigo!
+<p>
+    <a href="https://www.linkedin.com/in/pedro--carrasco/">
+        <img height="50" align="left" style="margin-left:15px;" src="https://raw.githubusercontent.com/pedrocarrasco82/pedrocarrasco82/main/assets/images/linkedin.png" alt="Pedro's Linkedin"/>
+    </a>
+    <a href="https://www.instagram.com/pedro_carrasco82/">
+        <img height="50" align="left" style="margin-left:15px;" src="https://raw.githubusercontent.com/pedrocarrasco82/pedrocarrasco82/main/assets/images/instagram.png" alt="Pedro's Instagram"/>
+    </a>
+    <a href="mailto:contatopedrocarrasco@gmail.com">
+        <img height="50" align="left" style="margin-left:15px;" src="https://raw.githubusercontent.com/pedrocarrasco82/pedrocarrasco82/main/assets/images/email.png" alt="Pedro's E-mail"/>
+    </a>
+</p>
