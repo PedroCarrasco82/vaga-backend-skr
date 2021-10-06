@@ -1,0 +1,19 @@
+{
+  "name": "index",
+  "baseUrl": "https://skr.com.br/empreendimentos/",
+  "selector": ".mosaic .item",
+  "nextPageSelector": "a[rel='next']",
+  "isBaseData": true,
+  "children": [
+    {
+      "name": "name",
+      "selector": "document.querySelector('.name').innerText",
+      "children": []
+    },
+    {
+      "name": "baseUrl",
+      "selector": "document.querySelector('.name').href",
+      "children": []
+    }
+  ]
+}

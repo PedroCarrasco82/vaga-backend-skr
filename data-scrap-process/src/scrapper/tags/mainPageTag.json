@@ -1,0 +1,41 @@
+{
+    "name": "index",
+    "isBaseData": false,
+    "children": [
+      {
+        "name": "name",
+        "selector": "document.querySelector('.breadcrumb a.active').innerText.trim()",
+        "children": []
+      },
+      {
+        "name": "release",
+        "selector": "!![...document.querySelectorAll('.infos .i-info')].filter(e => e.innerText.includes('LANÇAMENTO')).length && Number([...document.querySelectorAll('.infos .i-info')].filter(e => e.innerText.includes('LANÇAMENTO'))[0].innerText.replace(/\\D/g, ''))",
+        "children": []
+      },
+      {
+        "name": "deliveryForecast",
+        "selector": "!![...document.querySelectorAll('.infos .i-info')].filter(e => e && e.innerText && e.innerText.includes('PREVISÃO DE ENTREGA')).length && Number([...document.querySelectorAll('.infos .i-info')].filter(e => e.innerText.includes('PREVISÃO DE ENTREGA'))[0].innerText.replace(/\\D/g, ''))",
+        "children": []
+      },
+      {
+        "name": "images",
+        "selector": "[ ...document.querySelectorAll(`.inner.i-content .gallery[data-type='carrossel'] .images`)].map(e => e.style.backgroundImage.split('\"')[1])"
+      },
+      {
+        "name": "landscaping",
+        "selector": "!![...document.querySelectorAll('.infos .i-info')].filter(e => e && e.innerText && e.innerText.includes('PAISAGISMO')).length && [...document.querySelectorAll('.infos .i-info')].filter(e => e.innerText.includes('PAISAGISMO'))[0].innerText.split('\\n')[1].trim()"
+      },
+      {
+        "name": "architecture",
+        "selector": "!![...document.querySelectorAll('.infos .i-info')].filter(e => e && e.innerText && e.innerText.includes('ARQUITETURA')).length && [...document.querySelectorAll('.infos .i-info')].filter(e => e.innerText.includes('ARQUITETURA'))[0].innerText.split('\\n')[1].trim()"
+      },
+      {
+        "name": "tags",
+        "selector": "[...document.querySelectorAll('.tags .tag')].map(e => e.innerText.trim())"
+      },
+      {
+        "name": "localization",
+        "selector": "!![...document.querySelectorAll('.infos .i-info')].filter(e => e && e.innerText && e.innerText.includes('LOCALIZAÇÃO')).length && [...document.querySelectorAll('.infos .i-info')].filter(e => e.innerText.includes('LOCALIZAÇÃO'))[0].innerText.split('\\n')[1].trim()"
+      }
+    ]
+  }
